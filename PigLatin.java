@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class PigLatin {
   public static void main(String[] args) {
     // System.out.println(pigLatinSimple("mock"));
@@ -12,14 +13,26 @@ public class PigLatin {
     // System.out.println(pigLatin("grade"));
     // System.out.println(pigLatin("a"));
 
-    System.out.println(pigLatinBest("*emu"));
-    System.out.println(pigLatinBest("4chan"));
-    System.out.println(pigLatinBest("fish"));
-    System.out.println(pigLatinBest("fish!"));
-    System.out.println(pigLatinBest("the."));
-    System.out.println(pigLatinBest("cat!"));
-    System.out.println(pigLatinBest("amazing?"));
-    System.out.println(pigLatinBest("apple%"));
+    // System.out.println(pigLatinBest("*emu"));
+    // System.out.println(pigLatinBest("4chan"));
+    // System.out.println(pigLatinBest("fish"));
+    // System.out.println(pigLatinBest("fish!"));
+    // System.out.println(pigLatinBest("the."));
+    // System.out.println(pigLatinBest("cat!"));
+    // System.out.println(pigLatinBest("amazing?"));
+    // System.out.println(pigLatinBest("apple%"));
+
+    Scanner n = new Scanner (System.in);
+    while (n.hasNext()) {
+      Scanner line = new Scanner (n.nextLine());
+      while (line.hasNext()) {
+        String next = line.next();
+        String new_string = "";
+        new_string = new_string + pigLatinBest(next);
+        System.out.print(new_string + " ");
+      }
+      System.out.println();
+    }
   }
 
   public static String pigLatinSimple(String s) {
